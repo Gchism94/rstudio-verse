@@ -34,7 +34,7 @@ jobs:
           context: 4.2.0
           file: 4.2.0/Dockerfile
           push: true
-          tags: cyversevice/rstudio-verse:4.1.2     
+          tags: cyversevice/rstudio-verse:4.2.0     
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
