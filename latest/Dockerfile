@@ -4,7 +4,7 @@ FROM rocker/verse:latest
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
 ARG VCS_REF
-ARG VERSION
+ARG VERSION 
 
 # Install a few dependencies for iCommands, text editing, and monitoring instances
 RUN apt-get update && apt-get install -y ca-certificates lsb-release wget apt-transport-https curl supervisor nginx gnupg2 libfuse2 nano htop gcc less nodejs software-properties-common apt-utils glances
