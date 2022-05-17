@@ -3,7 +3,10 @@ name: DockerHub
 on:
   push:
     branches: main 
-    
+  pull_request:
+    branches: main
+  schedule: 
+  - cron: "55 * * * *"
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -25,7 +28,7 @@ jobs:
           context: latest
           file: latest/Dockerfile
           push: true
-          tags: cyversevice/rstudio-verse:latest
+          tags: gchism94/rstudio-verse:latest
       -
         name: Build and Push v4.2.0
         id: docker_build_four_one_two
@@ -34,7 +37,7 @@ jobs:
           context: 4.2.0
           file: 4.2.0/Dockerfile
           push: true
-          tags: cyversevice/rstudio-verse:4.2.0     
+          tags: gchism94/rstudio-verse:4.2.0     
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
